@@ -1,26 +1,29 @@
 package com.example.inhatc.myapplication;
 
+import android.content.Intent;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout layout1;
     LinearLayout layout2;
-    CheckBox ch1;
-    RadioButton rb1;
-    RadioButton rb2;
-    RadioButton rb3;
+    Switch sw1;
+    RadioGroup rg1;
     Button bt1;
+    Button bt2;
     ImageView iv1;
-    ImageView iv2;
-    ImageView iv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +32,18 @@ public class MainActivity extends AppCompatActivity {
         layout1 = (LinearLayout)findViewById(R.id.layout1);
         layout2 = (LinearLayout)findViewById(R.id.layout2);
 
-        setCheckBox();
+        setSwitch();
         setButton();
-        setRadioButton();
+        setRadioGroup();
         setImageViwe();
     }
 
-    void setCheckBox(){
-        ch1 = (CheckBox)findViewById(R.id.checkbox1);
-        ch1.setOnClickListener(new View.OnClickListener() {
+    void setSwitch(){
+        sw1 = (Switch) findViewById(R.id.switch1);
+        sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(ch1.isChecked())
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (sw1.isChecked())
                     layout2.setVisibility(View.VISIBLE);
                 else
                     layout2.setVisibility(View.INVISIBLE);
@@ -48,40 +51,41 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void setRadioButton(){
-        rb1= (RadioButton)findViewById(R.id.radioButton1);
-        rb2= (RadioButton)findViewById(R.id.radioButton2);
-        rb3= (RadioButton)findViewById(R.id.radioButton3);
-        rb1.setChecked(true);
+    void setRadioGroup(){
+        rg1 = (RadioGroup)findViewById(R.id.radioGroup);
+        rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.radioButton1)
+                    iv1.setImageResource(R.drawable.bori);
+                else if(checkedId==R.id.radioButton2)
+                    iv1.setImageResource(R.drawable.cat);
+                else if(checkedId==R.id.radioButton3)
+                    iv1.setImageResource(R.drawable.kiwii);
+            }
+        });
+
     }
 
     void setButton(){
         bt1 = (Button)findViewById(R.id.button);
+        bt2 =  (Button)findViewById(R.id.button2);
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(rb1.isChecked()) {
-                    iv1.setVisibility(View.VISIBLE);
-                    iv2.setVisibility(View.GONE);
-                    iv3.setVisibility(View.GONE);
-                }
-                else if(rb2.isChecked()) {
-                    iv1.setVisibility(View.GONE);
-                    iv2.setVisibility(View.VISIBLE);
-                    iv3.setVisibility(View.GONE);
-                }
-                else if(rb3.isChecked()){
-                    iv1.setVisibility(View.GONE);
-                    iv2.setVisibility(View.GONE);
-                    iv3.setVisibility(View.VISIBLE);
-                }
+                System.exit(0);
             }
         });
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sw1.setChecked(false);
+            }
+        });
+
     }
 
     void setImageViwe(){
         iv1 = (ImageView)findViewById(R.id.imageView);
-        iv2 = (ImageView)findViewById(R.id.imageView2);
-        iv3 = (ImageView)findViewById(R.id.imageView3);
     }
 }
