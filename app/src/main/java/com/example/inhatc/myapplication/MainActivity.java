@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button bt2;
     ImageView iv1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         layout1 = (LinearLayout)findViewById(R.id.layout1);
         layout2 = (LinearLayout)findViewById(R.id.layout2);
 
+        setTitle("안드로이드 사진보기");
         setSwitch();
         setButton();
         setRadioGroup();
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     void setSwitch(){
         sw1 = (Switch) findViewById(R.id.switch1);
+        sw1.setChecked(false);
         sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
