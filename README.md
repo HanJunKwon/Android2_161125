@@ -7,15 +7,15 @@
     <img src ="https://github.com/HanJunKwon/Android2_161125/blob/master/resultCapture/Screenshot_1480180178.png?raw=true"
     width=300 height=400><br>
     <hr>
-    <h1> 2. 멤버쉽x 피클선택 </h1>
+    <h1> 2. 시작함 </h1>
     <img src ="https://github.com/HanJunKwon/Android2_161125/blob/master/resultCapture/Screenshot_1480180373.png?raw=true"
     width=300 height=400><br>
     <hr>
-    <h1> 3. 멤버쉽x 소스선택 </h1>
+    <h1> 3. 고양이 선택 </h1>
     <img src ="https://github.com/HanJunKwon/Android2_161125/blob/master/resultCapture/Screenshot_1480180388.png?raw=true"
     width=300 height=400><br>
     <hr>
-    <h1> 4. 멤버쉽 </h1>
+    <h1> 4. 키위새 선택 </h1>
     <img src ="https://github.com/HanJunKwon/Android2_161125/blob/master/resultCapture/Screenshot_1480180394.png?raw=true"
     width=300 height=400><br>
     <hr>
