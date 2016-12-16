@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>안드로이드 피자가게</title>
+    <title>좋아하는 동물선택(스위치 이용)</title>
   </head>
   <body>
     <h1> 1. 실행 초기 화면 </h1>
